@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawn Cafe</title>
+    <!-- Link of Font Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".order-now").on("click", function(event) {
+                event.preventDefault();
+                
+                // Scroll to contact section
+                $('html, body').animate({
+                    scrollTop: $('.contact-section').offset().top
+                }, 800);
+                
+                // Pre-fill contact form with order message
+                setTimeout(function(){
+                    $(".contact-form textarea").val();
+                }, 1000);
+            });
+    
+            // Smooth scrolling for Home, Menu, Contact, and About
+            $(".nav-link").on("click", function(event) {
+                event.preventDefault();
+                var targetSection = $(this).text().toLowerCase() + "-section";
+                if (targetSection === "home-section") {
+                    $('html, body').animate({ scrollTop: 0 }, 800);
+                } else {
+                    $('html, body').animate({
+                        scrollTop: $('.' + targetSection).offset().top
+                    }, 800);
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <!--Header / Nav-->
+    <header>
+    <nav class="navbar">
+        <a href="#" class="navbar section-content">
+            <h2 class="logo">🍵 Dawn Cafe</h2>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" id="menu-open-button" class="fas fa-bars"></label>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Menu</a>   
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+
+    </nav>
+    </header>
+
+    <main>
+        <!--Hero Section-->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="section-details">
+                    <h3 class="subtitle">Start your day right with the perfect cup of our special coffee!</h3>
+                    <p class="description">Welcome to Dawn Cafe, where every bean holds a story and every sip brings joy.</p>
+                    <div class="buttons">
+                        <a href="#" class="button order-now">Order Now</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="Coffee/66_incredible_aesthetic_wallpaper_pc_coffee-removebg-preview.png" alt="Hero" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!--Menu Section-->
+        <section class="menu-section">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="section-content">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <img src="Coffee/Dynamic_Coffee_Splash_with_Beans_and_White_Cup__cut_out-removebg-preview.png" alt="Hot Beverages" class="menu-image">
+                        <h3 class="name">Hot Beverages</h3>
+                        <p class="text">Steaming hot coffee, rich and bold, to refresh and energize.</p>
+                    </li>
+                    <li class="menu-item">
+                        <img src="Coffee/Splash_Of_Coffe_Drinks_On_Transparent_Free__Coffee_Drink__Drinks_Splashing__Splash_Coffee_PNG_Transparent_Image_and_Clipart_for_Free_Download-removebg-preview.png" alt="Cold Beverages" class="menu-image">
+                        <h3 class="name">Cold Beverages</h3>
+                        <p class="text">Creamy iced coffee, smooth and cool, perfect for a chill day.</p>
+                    </li>
+                    <li class="menu-item">
+                        <img src="Coffee/Lemon_Juice-removebg-preview.png" alt="Refreshment" class="menu-image">
+                        <h3 class="name">Refreshment</h3>
+                        <p class="text">Fresh, fruity, and icy drinks to keep you cool and refreshed.</p>
+                    </li>
+                    <li class="menu-item">
+                        <img src="Coffee/Fresh_and_Tasty_Fast_Food__Burger__Fries___Cold_Drink_Stock_Illustration_-_Illustration_of_items__drink__268576369__1_-removebg-preview.png" alt="Special Combo" class="menu-image">
+                        <h3 class="name">Special Combo</h3>
+                        <p class="text">Enjoy the perfect meal combo with a juicy burger, crispy fries, and a refreshing drink.</p>
+                    </li>
+                    <li class="menu-item">
+                        <img src="Coffee/Ice_Cream_with_Nuts___Strawberry_-removebg-preview.png" alt="Dessert" class="menu-image">
+                        <h3 class="name">Dessert</h3>
+                        <p class="text">Treat yourself to a rich and creamy delight, topped with fresh strawberries and chocolate.</p>
+                    </li>
+                    <li class="menu-item">
+                        <img src="Coffee/HD_PNG_Tasty_Grilled_Hamburger_with_Chips_on_a_Plate-removebg-preview.png" alt="Snacks" class="menu-image">
+                        <h3 class="name">Snacks</h3>
+                        <p class="text">Grab a quick bite with crispy fries, a tasty burger, and flavorful dips.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--Contact Section-->
+        <section class="contact-section">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="section-content">
+                <ul class="contact-info-list">
+                    <li class="contact-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>Arellano Street, Dagupan City</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>dawncafe123@email.com</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>123-456-789</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Sunday: Closed</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>www.dawncafe.com</p>
+                    </li>
+                </ul>
+
+                <form action="#" class="contact-form">
+                    <input type="text" placeholder="Your name" class="form-input" required>
+                    <input type="email" placeholder="Your email" class="form-input" required>
+                    <textarea placeholder="Your message" class="form-input" required></textarea>
+                    <button class="submit-button">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <!--About Section-->
+        <section class="about-section">
+            <div class="section-content">
+                <div class="about-image-wrapper">
+                    <img src="Coffee/about picture.jpg" alt="About" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="text">
+                        Dawn Cafe on Arellano Street, Dagupan City, is a cozy haven for coffee lovers and great conversations. We offer a warm, inviting atmosphere where guests can relax and enjoy exceptional coffee.
+                    </p>
+                    <div class="social-link-list">
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!--Footer Section-->
+         <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2025 Dawn Cafe</p>
+
+                <div class="social-link-list">
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+                <p class="policy-text">
+                    <a href="#" class="policy-link">Privacy policy</a>
+                    <span class="separator">⬤</span>
+                    <a href="#" class="policy-link">Refund policy</a>
+                </p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
